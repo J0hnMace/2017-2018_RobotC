@@ -16,4 +16,4 @@ Please check [the wiki](https://github.com/9651-Robotics/2016-2017_RobotC/wiki) 
   * `BrokenCode` This should be self-explanitory. 
   * `Competition` Code that was written for previous competition robots; most likley will contain a set of autonomous instructions at the top, as well as fully functional drivetrain and arm programming.
   * `Reference` is a mixture of RobotC sample code and unneeded working code, both of which demonstrate how to implement features such as sensors and pneumatics.
-* `SpeakerSongs` Contains unconverted .TXT files which can be converted into RobotC functions within the "RTTTF (Ring Tone Text Transfer Format) Converter Utility" located within the RobotC IDE. Will not do anything without an attached speaker module.
+  * `SpeakerSongs` Contains unconverted .TXT files which can be converted into RobotC functions within the "RTTTF (Ring Tone Text Transfer Format) Converter Utility" located within the RobotC IDE. Will not do anything without an attached speaker module.
