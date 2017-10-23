@@ -25,12 +25,22 @@ task main()
   //Loop Forever
   while(1 == 1)
   {
+
+  	bPlaySounds = false;
+
     //Remote Control Commands
     motor[frontRight] = vexRT[Ch3] - vexRT[Ch1] - vexRT[Ch4];
     motor[backRight] =  vexRT[Ch3] - vexRT[Ch1] + vexRT[Ch4];
     motor[frontLeft] = vexRT[Ch3] + vexRT[Ch1] + vexRT[Ch4];
     motor[backLeft] =  vexRT[Ch3] + vexRT[Ch1] - vexRT[Ch4];
 
+   if(vexRT[Btn7U] == 1){
+		bPlaySounds = true;
+		playSoundFile("car");
+		playSoundFile("car.wav");
+		while(bSoundActive)
+			wait1Msec(1);
+	}
 
   if(vexRT[Btn6D] == 1){
   	 motor[rightArm] = 127;
@@ -44,5 +54,6 @@ task main()
 		 motor[rightArm] = 0;
 		 motor[leftArm] = 0;
 	}
+
 }
 }
