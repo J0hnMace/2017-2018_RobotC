@@ -11,10 +11,10 @@ task main(){
 	while(1 == 1)
 		{
 			/* mecanum drivetrain, joystick arcade control */
-			motor[frontRight] = vexRT[Ch3] - vexRT[Ch1] - vexRT[Ch4];
-    	motor[backRight] =  vexRT[Ch3] - vexRT[Ch1] + vexRT[Ch4];
-    	motor[frontLeft] = vexRT[Ch3] + vexRT[Ch1] + vexRT[Ch4];
-    	motor[backLeft] =  vexRT[Ch3] + vexRT[Ch1] - vexRT[Ch4];
+			motor[frontRight] = - vexRT[AccelY] - vexRT[AccelX] - vexRT[Ch4];
+    	motor[backRight] = - vexRT[AccelY] - vexRT[AccelX] + vexRT[Ch4];
+    	motor[frontLeft] = - vexRT[AccelY] + vexRT[AccelX] + vexRT[Ch4];
+    	motor[backLeft] = - vexRT[AccelY] + vexRT[AccelX] - vexRT[Ch4];
 
     	/* mobile goal lift */
   		if(vexRT[Btn5D] == 1){motor[goal] = -127;}
