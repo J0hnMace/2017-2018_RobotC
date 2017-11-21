@@ -11,7 +11,6 @@
 #pragma competitionControl(Competition)
 #include "Vex_Competition_Includes.c"
 
-
 /* calibrate sensors, deactivate first law  */
 void pre_autonomous()
 {
