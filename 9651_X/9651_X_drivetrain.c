@@ -20,6 +20,8 @@ void pre_autonomous()
 /* autonomous period */
 Task autonomous()
 {
+  /* Plays X Gon Give It To Ya (clean) */
+  playSoundFile(9651x_ggity.wav);
 
 }
 
