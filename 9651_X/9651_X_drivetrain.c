@@ -32,8 +32,8 @@ task autonomous()
 			while(bSoundActive)
 
 }
-/* driver control period */
 
+/* driver control period */
 task usercontrol()
 {
 	/* threshold values */
