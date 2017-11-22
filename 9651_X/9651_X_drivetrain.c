@@ -30,7 +30,7 @@ task autonomous()
 			playSoundFile("9651x_ggity.wav");
 			playSoundFile("9651x_ggity");
 			while(bSoundActive)
-
+		}
 }
 
 /* driver control period */
