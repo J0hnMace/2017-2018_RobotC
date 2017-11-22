@@ -23,11 +23,7 @@ void pre_auton()
 /* autonomous period */
 task autonomous()
 {
-	/* code below may need to be uncommented*/
-	//bPlaySounds = true;
-	playSoundFile("9651x_ggity.wav");
-	//playSoundFile("9651x_ggity");
-	//while(bSoundActive);
+	//playSoundFile("9651x_ggity.wav");
 }
 
 /* driver control period */
@@ -49,10 +45,10 @@ task usercontrol()
 			X1 = 0;
 
 		/* mecanum drive, Y1=forward/reverse, X1=turn */
-		motor[frontRight] = - Y1 - X1 - vexRT[Ch4];
-		motor[backRight] = - Y1 - X1 + vexRT[Ch4];
-		motor[frontLeft] = - Y1 + X1 + vexRT[Ch4];
-		motor[backLeft] = - Y1 + X1 - vexRT[Ch4];
+		motor[frontRight] = - X1 - Y1 - vexRT[Ch4];
+		motor[backRight] = - X1 - Y1 + vexRT[Ch4];
+		motor[frontLeft] = - X1 + Y1 - vexRT[Ch4];
+		motor[backLeft] = - X1 + Y1 + vexRT[Ch4];
 
 		/* mobile goal lift */
 		if(vexRT[Btn5D] == 1)
@@ -64,10 +60,18 @@ task usercontrol()
 
 		/* left side cone lift */
 		if(vexRT[Btn7U] == 1)
-		{motor[coneLeft] = -127;}
+			{
+				playSoundFile("9651x_ggity.wav");
+
+				/*motor[coneLeft] = -127;
+			}
 		else if(vexRT[Btn7D] == 1)
-		{motor[coneLeft] = 127;}
+			{
+				motor[coneLeft] = 127;
+			}
 		else
-		{motor[coneLeft] = 0;}
+			{
+				motor[coneLeft] = 0;*/
+			}
 	}
 }
