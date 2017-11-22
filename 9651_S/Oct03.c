@@ -38,10 +38,10 @@ task main()
     motor[backLeft] =  vexRT[Ch3] + vexRT[Ch1] - vexRT[Ch4];
 
    if(vexRT[Btn7U] == 1){
-		//bPlaySounds = true;
-		//playSoundFile("car");
-		//playSoundFile("car.wav");
-		//while(bSoundActive)
+		bPlaySounds = true;
+		playSoundFile("car");
+		playSoundFile("car.wav");
+		while(bSoundActive)
 			wait1Msec(1);
 	}
 
