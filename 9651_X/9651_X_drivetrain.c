@@ -14,23 +14,45 @@
 
 #include "Vex_Competition_Includes.c"
 
-/* calibrate sensors, deactivate first law */
+/* calibrate sensors */
 void pre_auton()
 {
-	/*  */
+	SensorValue[goalHeight] = 0;
 }
 
 /* autonomous period */
 task autonomous()
 {
-	//playSoundFile("9651x_ggity.wav");
+	/* first law deactivated */
+	//playSoundFile("xxxxxx");
+
+	/* LCD display */
+	displayLCDPos(0,0);
+	displayNextLCDString("9651X");
+	displayLCDPos(1,0);
+	displayNextLCDString("GonGiveItToYa");
+
+	/* lower goal lift */
+	motor[goal] = -127;
+		if(SensorValue[goalHeight] > 200)
+			{
+				motor[goal] = 127;
+			}
+		else if(SensorValue[goalHeight] < 200)
+			{
+				motor[goal] = -127;
+			}
+		else if(SensorValue[goalHeight] == 200)
+			{
+				motor[goal] = 0;
+			}
 }
 
 /* driver control period */
 task usercontrol()
 {
 	/* threshold values */
-	int Y1 = 0, X1 = 0, threshold = 30;
+	int Y1 = 0, X1 = 0, threshold = 20;
 
 	while(1 == 1)
 	{
@@ -52,26 +74,30 @@ task usercontrol()
 
 		/* mobile goal lift */
 		if(vexRT[Btn5D] == 1)
-		{motor[goal] = -127;}
+		{
+			motor[goal] = -127;
+		}
 		else if(vexRT[Btn5U] == 1)
-		{motor[goal] = 127;}
+		{
+			motor[goal] = 127;
+		}
 		else
-		{motor[goal] = 0;}
+		{
+			motor[goal] = 0;
+		}
 
 		/* left side cone lift */
 		if(vexRT[Btn7U] == 1)
-			{
-				playSoundFile("9651x_ggity.wav");
-
-				/*motor[coneLeft] = -127;
-			}
+		{
+			motor[coneLeft] = -127;
+		}
 		else if(vexRT[Btn7D] == 1)
-			{
-				motor[coneLeft] = 127;
-			}
+		{
+			motor[coneLeft] = 127;
+		}
 		else
-			{
-				motor[coneLeft] = 0;*/
-			}
+		{
+			motor[coneLeft] = 0;
+		}
 	}
 }
