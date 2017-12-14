@@ -1,0 +1,34 @@
+/*#################################################################################################*/
+/*							  •CL4P-TP "Clap Trap" Standard code•								   */
+/*																								   */
+/* This is classified firmware, any attempts of illegal redistribution, unapproved modification	   */
+/* and tampering with the interface hardware will result in your immediate demise				   */
+/*																								   */
+/* BoomTrap.exe																					   */
+/*	-	Blow stuff up																			   */
+/*	-	Control and neutralize bandit population												   */
+/*  -	Appease Mr. Torgue																		   */
+/* VaultHunter.exe																				   */
+/*  -	Seek and destroy vaults and their guardians												   */
+/*  -	Recover eridian artifacts and weapons for research										   */
+/*  -																							   */
+/*																								   */
+/* Dance Subroutine 																			   */
+/*  -	DANCE DANCE BABY!																		   */
+/*#################################################################################################*/
+
+
+// main combat pragma
+#pragma config(Sensor, in1, 		eyeMain,		sensorEye)
+#pragma config(Sensor, in2,			PMLeftHand,		sensorPotentiometer)
+
+// dance subroutine pragma
+#pragma config(Sensor, in1,			tooJiggy,		sensorJiggy)
+#pragma config(Dance, port1,		cabbagePatch,	tdanceCabbagePatch, openLoop)
+#pragma config(Dance, port2, 		moonWalk,		tdanceMoonWalkContinuousSlide, openLoop)
+#pragma config(Dance, port3,		theWorm,		tdanceWormContinuousWave, openLoop)
+
+#pragma platform(CL4P-TP)
+
+#pragma 
+#pragma danceSubroutine
