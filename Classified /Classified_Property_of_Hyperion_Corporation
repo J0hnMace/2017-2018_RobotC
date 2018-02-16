@@ -27,6 +27,7 @@
 #pragma config(Dance, port1,		cabbagePatch,	tdanceCabbagePatch, openLoop)
 #pragma config(Dance, port2, 		moonWalk,		tdanceMoonWalkContinuousSlide, openLoop)
 #pragma config(Dance, port3,		theWorm,		tdanceWormContinuousWave, openLoop)
+#pragma config(Dance, port4,		floss,			tdanceFlossingContinuousShimmy, openLoop)
 
 #pragma platform(CL4P-TP)
 
